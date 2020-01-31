@@ -9,8 +9,7 @@ To solve this, we create `hooks/build` which augments the default image name pro
 1. `Dockerfile`: Define the base image variable `TF_IMAGE` and give it a default value.
 2. `hooks/build`: Use `--build-arg` to override the default value of `TF_IMAGE` in parallel image builds.
 3. `hooks/build`: Use `$IMAGE_NAME`, which is provided by Dockerhub, to dynamically generate a tag for parallel image builds.
-4. `hooks/build`: Build and push parallel images by hand.
-5. `hooks/build`: Ensure that the script ends with building the default image.
+4. `hooks/build`: Build and push parallel images by hand. End the script by building the default image.
 6. Create a `v1.0` release. In this example, the difference between `v1.0` and most recent `master` is the version of Python.
 
 ### On the Dockerhub side:
