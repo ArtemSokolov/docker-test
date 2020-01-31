@@ -34,4 +34,17 @@ root@ae32b88f5cc6:/# python --version
 Python 2.7.15+
 root@ae32b88f5cc6:/# ls /dev/nvidia*
 /dev/nvidia-uvm  /dev/nvidia-uvm-tools  /dev/nvidia0  /dev/nvidiactl
+
+docker run -it --rm --runtime=nvidia artemsokolovdh/docker-test:latest bash
+root@c02020c6d02c:/# python --version
+Python 3.6.8
+root@c02020c6d02c:/# ls /dev/nvidia*
+ls: cannot access '/dev/nvidia*': No such file or directory
+
+docker run -it --rm --runtime=nvidia artemsokolovdh/docker-test:latest-gpu bash
+root@0e652fb49598:/# python --version
+Python 3.6.8
+root@0e652fb49598:/# ls /dev/nvidia*
+/dev/nvidia-uvm  /dev/nvidia-uvm-tools  /dev/nvidia0  /dev/nvidiactl
+root@0e652fb49598:/# exit
 ```
